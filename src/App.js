@@ -176,7 +176,7 @@ const Portfolio = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
       
-      const sections = ['home', 'about', 'experience', 'projects', 'skills', 'contact'];
+      const sections = ['home', 'about', 'experience', 'projects', 'skills',"contact"];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -238,7 +238,7 @@ const Portfolio = () => {
             
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
-              {['Home', 'About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
+              {['Home', 'About', 'Experience', 'Projects', 'Skills'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}

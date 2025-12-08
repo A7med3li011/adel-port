@@ -104,7 +104,7 @@ const portfolioData = {
     {
       name: "Patria",
       description: "Cafe and restaurant mobile app with fast delivery, special offers, easy ordering, and location tracking",
-      image: patria1,
+      image: patria2,
       images: [patria1, patria2, patria3],
       tech: ["Flutter", "Maps Integration", "Food Delivery"]
     },

@@ -50,7 +50,6 @@ import patria3 from "./assits/patria/patria3.png";
 import erp1 from "./assits/erp/erp1.png";
 import erp2 from "./assits/erp/erp2.png";
 import erp3 from "./assits/erp/erp3.png";
-import erp4 from "./assits/erp/erp4.png";
 
 // Portfolio data
 const portfolioData = {
@@ -129,7 +128,7 @@ const portfolioData = {
       description:
         "Cafe & restaurant app focused on dine-in, takeaway and delivery with menu management, table reservations, offers, and location tracking",
       image: erp1,
-      images: [erp1, erp2, erp3, erp4],
+      images: [erp1, erp2, erp3],
       tech: ["Flutter", "Maps Integration", "Food Delivery"],
     },
     {

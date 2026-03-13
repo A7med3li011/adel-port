@@ -11,6 +11,7 @@ import {
   ChevronDown,
   Download,
   CloudDownload,
+  MessageCircle,
 } from "lucide-react";
 import profileImage from "./assits/profile.jpeg";
 import resumePDF from "./assits/Adel Mostafa - CV.pdf";
@@ -51,6 +52,31 @@ import erp1 from "./assits/erp/erp1.png";
 import erp2 from "./assits/erp/erp2.png";
 import erp3 from "./assits/erp/erp3.png";
 
+// WhatsApp SVG Icon Component
+const WhatsAppIcon = ({ size = 20 }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+  </svg>
+);
+
+// Upwork Top Rated Badge Component
+const UpworkBadge = () => (
+  <div className="flex items-center justify-center gap-2 mt-3">
+    <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#14a800]/15 border border-[#14a800]/40 text-[#14a800] text-sm font-semibold">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.543-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3.001-2.439-5.452-5.439-5.452z" />
+      </svg>
+      Top Rated on Upwork
+    </span>
+  </div>
+);
+
 // Portfolio data
 const portfolioData = {
   personal: {
@@ -59,142 +85,219 @@ const portfolioData = {
     image: profileImage,
     email: "adelmostafamohamed12@gmail.com",
     phone: "+20 1222402998",
+    whatsapp: "https://wa.me/201222402998",
     linkedin: "https://www.linkedin.com/in/adel-mostafa-766296234/",
     github: "https://github.com/AdelMostafa31",
+    upwork: "https://www.upwork.com/freelancers/adelmostafa",
     summary:
-      "I graduated from the faculty of Computing and Data Science at Alexandria University and began working as a mobile app developer. Through working on various real-life projects, I have gained practical experience that aligns with the needs of companies today. I use Flutter for mobile app development to create Android and iOS apps, I can also generate a web app using a single code base.",
+      "I graduated from the Faculty of Computing and Data Science at Alexandria University and began working as a mobile app developer. Through working on various real-life projects across Egypt, UAE, Saudi Arabia, and the USA, I have gained practical experience that aligns with the needs of companies today. I use Flutter for mobile app development to create Android and iOS apps, and can also generate a web app using a single code base.",
   },
 
   experience: [
     {
-      company: "MemChat",
+      company: "Colada",
+      role: "Flutter Developer",
+      location: "Saudi Arabia (Remote)",
+      period: "January 2026 – Present",
+      highlights: [
+        "Built and maintained the Colada consumer app — an exclusive restaurant and cafe offers platform with 1,000+ active deals and cashback rewards across Riyadh.",
+        "Integrated dynamic offer feeds, deep links, and real-time deal updates using Flutter and REST APIs.",
+        "Implemented cashback reward system and user engagement features.",
+      ],
+    },
+    {
+      company: "MemoryChat",
       role: "Flutter Developer",
       location: "Alexandria, Egypt",
-      period: "July 2025 - Present",
+      period: "June 2025 – Present",
       highlights: [
-        "Design and implement mobile apps with Flutter, ensuring seamless performance on both Android and iOS platforms",
-        "Create modern, adaptive user interfaces focused on smooth user experiences and clean design",
-        "Connect applications with RESTful APIs while managing advanced navigation and interactive features",
-        "Apply robust state management patterns like Bloc and GetIt to maintain scalable and maintainable codebases",
+        "Architected an offline-first chat application using Drift ORM for local storage and PowerSync for bidirectional sync with Supabase (PostgreSQL) backends.",
+        "Implemented real-time messaging with Supabase Realtime subscriptions and conflict-free data handling.",
+        "Designed scalable architecture ensuring seamless online/offline transitions.",
+      ],
+    },
+    {
+      company: "Priceless Medical",
+      role: "Flutter Developer",
+      location: "UAE (Remote)",
+      period: "July 2025 – March 2026",
+      highlights: [
+        "Delivered new features including DeepLinks, in-app Subscriptions, and Stripe payment integration for the UAE's first smart healthcare savings platform.",
+        "Maintained and optimized the app serving 30+ clinics and hospitals across the UAE.",
+        "Improved app performance and resolved critical production bugs.",
       ],
     },
     {
       company: "TopProz",
       role: "Flutter Developer",
-      location: "California, USA",
-      period: "June 2025 - Oct 2025",
+      location: "California, USA (Remote)",
+      period: "June 2025 – September 2025",
       highlights: [
-        "Develop and maintain cross-platform mobile applications using Flutter for Android and iOS",
-        "Build responsive, user-friendly UIs aligned with modern design principles",
-        "Integrate RESTful APIs and handle complex user interactions and navigation flows",
-        "Utilize state management solutions such as Bloc and GetIt for scalable architecture",
+        "Developed and maintained cross-platform mobile applications using Flutter for Android and iOS.",
+        "Built responsive, user-friendly UIs aligned with modern design principles.",
+        "Integrated RESTful APIs and collaborated with product managers and designers to deliver new features.",
       ],
     },
     {
       company: "MDARJ",
       role: "Flutter Developer",
-      location: "Alex®andria, Egypt",
-      period: "May 2024 - June 2025",
+      location: "Alexandria, Egypt",
+      period: "May 2024 – June 2025",
       highlights: [
-        "Developed and deployed multiple mobile applications, resulting in a portfolio",
-        "Maintained effective communication channels with clients, ensuring thorough understanding of project requirements",
-        "Leveraged cutting-edge technologies to craft mobile applications with optimal performance",
+        "Led mobile development across multiple client projects, applying MVVM and BLoC to deliver apps on time and within budget.",
+        "Developed and deployed multiple mobile applications, resulting in a strong project portfolio.",
+        "Maintained effective communication channels with clients, ensuring thorough understanding of project requirements.",
       ],
     },
     {
-      company: "Freelancing",
+      company: "Upwork – Freelancing",
       role: "Flutter & Backend Developer",
       location: "Remote",
-      period: "Present",
+      period: "January 2023 – Present",
       highlights: [
-        "Developed and delivered multiple Flutter-based applications for diverse clients",
-        "Designed and implemented scalable backend solutions for various client projects",
-        "Maintained clear communication throughout the project lifecycle",
+        "Top Rated Flutter Developer on Upwork with clients including Bidfood CRM (UAE), T2 (Saudi Arabia), and CHAQT (UAE).",
+        "T2: Built an AI automation chat app — admins send voice/text commands to trigger AI-driven task management for employees via N8N workflows.",
+        "Bidfood & CHAQT: Feature development and bug fixes on live production apps across the UAE market.",
+        "Delivered apps end-to-end: UI, REST API integration, state management (BLoC / Riverpod), app store deployment, Node.js backend support.",
       ],
     },
   ],
 
   projects: [
     {
+      name: "Colada",
+      description:
+        "Exclusive restaurant and cafe offers platform with 1,000+ active deals and cashback rewards across Riyadh, Saudi Arabia. Live on App Store and Google Play.",
+      image: null,
+      images: [],
+      tech: ["Flutter", "REST APIs", "Deep Links", "Cashback System"],
+      emoji: "🍹",
+    },
+    {
+      name: "MemoryChat",
+      description:
+        "Offline-first chat and note-taking application with full real-time bidirectional sync and conflict-free local storage.",
+      image: null,
+      images: [],
+      tech: ["Flutter", "Drift ORM", "PowerSync", "Supabase", "PostgreSQL"],
+      emoji: "💬",
+    },
+    {
+      name: "Priceless Medical",
+      description:
+        "UAE's first smart healthcare savings platform. Serves 30+ partner clinics and hospitals across the UAE with in-app subscriptions and Stripe payments.",
+      image: null,
+      images: [],
+      tech: ["Flutter", "Stripe", "Deep Links", "In-App Subscriptions"],
+      emoji: "🏥",
+    },
+    {
+      name: "Bidfood Home",
+      description:
+        "Online food & beverage delivery platform for the UAE market. Production-grade B2C platform with CRM integration and feature enhancements.",
+      image: null,
+      images: [],
+      tech: ["Flutter", "CRM Integration", "REST APIs", "BLoC"],
+      emoji: "🛒",
+    },
+    {
+      name: "TopProz",
+      description:
+        "Service and project management app for the US market. End-to-end feature development with MVVM architecture.",
+      image: null,
+      images: [],
+      tech: ["Flutter", "REST APIs", "MVVM", "BLoC"],
+      emoji: "🔧",
+    },
+    {
       name: "Patria",
       description:
-        "Cafe and restaurant mobile app with fast delivery, special offers, easy ordering, and location tracking",
+        "Cafe and restaurant mobile app with fast delivery, special offers, easy ordering, and location tracking.",
       image: patria2,
       images: [patria1, patria2, patria3],
       tech: ["Flutter", "Maps Integration", "Food Delivery"],
+      emoji: null,
     },
     {
       name: "ERB",
       description:
-        "Cafe & restaurant app focused on dine-in, takeaway and delivery with menu management, table reservations, offers, and location tracking",
+        "Cafe & restaurant app focused on dine-in, takeaway and delivery with menu management, table reservations, offers, and location tracking.",
       image: erp1,
       images: [erp1, erp2, erp3],
       tech: ["Flutter", "Maps Integration", "Food Delivery"],
+      emoji: null,
     },
     {
       name: "Tansieq",
       description:
-        "Ministry of Saudi Hajj - Comprehensive Hajj management system with pilgrim tracking, statistics, and service management",
+        "Ministry of Saudi Hajj — Comprehensive Hajj management system with pilgrim tracking, statistics, and service management.",
       image: t5,
       images: [t1, t2, t3, t4, t5],
       tech: ["Flutter", "Firebase", "Maps Integration"],
+      emoji: null,
     },
     {
       name: "T-Chat",
       description:
-        "Task management and team collaboration app with shared tasks, calendar view, and performance analytics",
+        "Task management and team collaboration app with shared tasks, calendar view, and performance analytics.",
       image: chat1,
       images: [chat1, chat2, chat3, chat4],
-      tech: ["Flutter", "Bloc", "RESTful APIs"],
+      tech: ["Flutter", "BLoC", "RESTful APIs"],
+      emoji: null,
     },
     {
       name: "Space",
       description:
-        "Medical library app for medical students with lecture summaries, study materials, and order management",
+        "Medical library app for medical students with lecture summaries, study materials, and order management.",
       image: sp1,
       images: [sp1, sp2, sp3, sp4],
       tech: ["Flutter", "Firebase", "Clean Architecture"],
+      emoji: null,
     },
     {
       name: "Ninja",
       description:
-        "Delivery and ERP system with order management, real-time tracking, attendance, and employee management",
+        "Delivery and ERP system with order management, real-time tracking, attendance, and employee management.",
       image: ninja1,
       images: [ninja3, ninja2, ninja1, ninja4],
       tech: ["Flutter", "Maps", "Real-time Tracking"],
+      emoji: null,
     },
     {
       name: "Request",
       description:
-        "Contractors and project management app with budget tracking, team collaboration, and performance analytics",
+        "Contractors and project management app with budget tracking, team collaboration, and performance analytics.",
       image: req1,
       images: [req4, req2, req3, req1],
-      tech: ["Flutter", "Bloc", "Charts"],
+      tech: ["Flutter", "BLoC", "Charts"],
+      emoji: null,
     },
-
     {
       name: "Wasfa",
       description:
-        "Recipe and cooking app with meal categories, ingredients lists, and beautiful food photography",
+        "Recipe and cooking app with meal categories, ingredients lists, and beautiful food photography.",
       image: w4,
       images: [w3, w2, w1, w4],
       tech: ["Flutter", "Firebase", "UI/UX"],
+      emoji: null,
     },
     {
       name: "Chess Game",
       description:
-        "Interactive chess game with checkmate detection, move validation, and clean game interface",
+        "Interactive chess game with checkmate detection, move validation, and clean game interface.",
       image: chess1,
       images: [chess1, chess2, chess3],
       tech: ["Flutter", "Game Logic", "Animations"],
+      emoji: null,
     },
     {
       name: "Quran Time",
       description:
-        "Quran reading app with Surah navigation, recitation timing, favorites, and beautiful Arabic typography",
+        "Quran reading app with Surah navigation, recitation timing, favorites, and beautiful Arabic typography.",
       image: q1,
       images: [q1, q2],
       tech: ["Flutter", "Audio", "Arabic Typography"],
+      emoji: null,
     },
   ],
 
@@ -202,18 +305,28 @@ const portfolioData = {
     technical: [
       "Dart",
       "Flutter",
-      "Bloc Pattern",
+      "BLoC / Cubit",
+      "Riverpod",
+      "Provider",
+      "MVVM",
       "Clean Architecture",
-      "Git & GitHub",
       "RESTful APIs",
       "Firebase",
       "Supabase",
+      "Drift ORM",
+      "PowerSync",
       "Node.js",
       "Express.js",
+      "SQL / PostgreSQL",
       "MongoDB",
-      "SQL",
-      "Python",
+      "Stripe",
+      "Deep Links",
+      "Push Notifications",
+      "In-App Purchases",
+      "Animations",
+      "Localization",
       "JavaScript",
+      "Python",
       "GraphQL",
     ],
     concepts: [
@@ -221,9 +334,43 @@ const portfolioData = {
       "OOP",
       "SOLID Principles",
       "Design Patterns",
+      "Offline-First Architecture",
+      "Real-Time Data",
       "Clean Code",
       "CI/CD",
       "Testing",
+    ],
+    devops: [
+      "Git & GitHub",
+      "GitHub Actions",
+      "Codemagic",
+      "Docker",
+      "App Store Connect",
+      "Google Play Console",
+      "Automated Build & Deploy Pipelines",
+    ],
+    testing: [
+      "Flutter Unit Testing",
+      "Widget Testing",
+      "Integration Testing",
+      "Mockito",
+      "flutter_mockito",
+      "TDD",
+    ],
+    aiAutomation: [
+      "N8N Workflows",
+      "AI Agents",
+      "RAGs",
+      "AI Task Automation",
+      "Self-hosted AI",
+    ],
+    tools: [
+      "Jira",
+      "Trello",
+      "Plane",
+      "Agile / Scrum",
+      "CCNA (Cisco Certified)",
+      "TCP/IP",
     ],
     soft: [
       "Agile Development",
@@ -278,8 +425,10 @@ const Portfolio = () => {
   };
 
   const openProjectModal = (project) => {
-    setSelectedProject(project);
-    setCurrentImageIndex(0);
+    if (project.images && project.images.length > 0) {
+      setSelectedProject(project);
+      setCurrentImageIndex(0);
+    }
   };
 
   const closeProjectModal = () => {
@@ -290,7 +439,7 @@ const Portfolio = () => {
   const nextImage = () => {
     if (selectedProject) {
       setCurrentImageIndex((prev) =>
-        prev === selectedProject.images.length - 1 ? 0 : prev + 1
+        prev === selectedProject.images.length - 1 ? 0 : prev + 1,
       );
     }
   };
@@ -298,7 +447,7 @@ const Portfolio = () => {
   const prevImage = () => {
     if (selectedProject) {
       setCurrentImageIndex((prev) =>
-        prev === 0 ? selectedProject.images.length - 1 : prev - 1
+        prev === 0 ? selectedProject.images.length - 1 : prev - 1,
       );
     }
   };
@@ -336,13 +485,13 @@ const Portfolio = () => {
                       activeSection === item.toLowerCase()
                         ? "text-pink-500"
                         : darkMode
-                        ? "text-gray-300 hover:text-pink-400"
-                        : "text-gray-700 hover:text-pink-500"
+                          ? "text-gray-300 hover:text-pink-400"
+                          : "text-gray-700 hover:text-pink-500"
                     }`}
                   >
                     {item}
                   </button>
-                )
+                ),
               )}
             </div>
 
@@ -387,8 +536,8 @@ const Portfolio = () => {
                     activeSection === item.toLowerCase()
                       ? "bg-pink-500/20 text-pink-500"
                       : darkMode
-                      ? "hover:bg-gray-700"
-                      : "hover:bg-gray-100"
+                        ? "hover:bg-gray-700"
+                        : "hover:bg-gray-100"
                   }`}
                 >
                   {item}
@@ -419,13 +568,19 @@ const Portfolio = () => {
             </span>
           </h1>
           <p
-            className="text-2xl md:text-3xl mb-8 animate-slide-up"
+            className="text-2xl md:text-3xl mb-2 animate-slide-up"
             style={{ animationDelay: "0.1s" }}
           >
             {portfolioData.personal.title}
           </p>
+
+          {/* Top Rated on Upwork Badge */}
+          <div className="animate-slide-up" style={{ animationDelay: "0.15s" }}>
+            <UpworkBadge />
+          </div>
+
           <p
-            className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 animate-slide-up"
+            className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mt-6 mb-12 animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
             Flutter Developer | Mobile App Specialist
@@ -468,6 +623,18 @@ const Portfolio = () => {
             >
               <CloudDownload className="inline mr-2" size={20} />
               Download CV
+            </a>
+            {/* WhatsApp Button */}
+            <a
+              href={portfolioData.personal.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-lg border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white hover:shadow-lg hover:scale-105 transition-all"
+            >
+              <span className="inline-flex items-center gap-2">
+                <WhatsAppIcon size={20} />
+                WhatsApp
+              </span>
             </a>
           </div>
           <button
@@ -519,6 +686,19 @@ const Portfolio = () => {
                     {portfolioData.personal.phone}
                   </a>
                 </div>
+                <div className="flex items-center space-x-3">
+                  <span className="text-[#25D366]">
+                    <WhatsAppIcon size={20} />
+                  </span>
+                  <a
+                    href={portfolioData.personal.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#25D366] transition-colors"
+                  >
+                    Chat on WhatsApp
+                  </a>
+                </div>
               </div>
             </div>
             <div
@@ -535,7 +715,18 @@ const Portfolio = () => {
                   Alexandria University
                 </p>
                 <p className={darkMode ? "text-gray-400" : "text-gray-600"}>
-                  2021 - 2025
+                  2021 – 2025 | Grade: Good
+                </p>
+              </div>
+              <div className="mt-6 pt-6 border-t border-gray-700 space-y-2">
+                <p className="text-xl font-semibold text-purple-400">
+                  CCNA – Cisco Network Certificate
+                </p>
+                <p className={darkMode ? "text-gray-400" : "text-gray-600"}>
+                  NTI / Creativa – Cisco
+                </p>
+                <p className={darkMode ? "text-gray-400" : "text-gray-600"}>
+                  September 2023 – November 2023
                 </p>
               </div>
             </div>
@@ -624,16 +815,31 @@ const Portfolio = () => {
                 } hover:shadow-2xl transition-all hover:scale-105 group`}
               >
                 <div
-                  className="aspect-video bg-gradient-to-br from-pink-500/20 to-purple-600/20 flex items-center justify-center cursor-pointer"
+                  className={`aspect-video bg-gradient-to-br from-pink-500/20 to-purple-600/20 flex items-center justify-center ${
+                    project.images && project.images.length > 0
+                      ? "cursor-pointer"
+                      : "cursor-default"
+                  }`}
                   onClick={() => openProjectModal(project)}
                 >
-                  <div className="text-6xl">
+                  {project.image ? (
                     <img
                       src={project.image}
                       alt={project.name}
                       className="w-full h-full object-cover"
                     />
-                  </div>
+                  ) : (
+                    <div className="flex flex-col items-center justify-center gap-3">
+                      <span className="text-5xl">{project.emoji}</span>
+                      <span
+                        className={`text-sm font-medium ${
+                          darkMode ? "text-gray-400" : "text-gray-500"
+                        }`}
+                      >
+                        {project.name}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2 group-hover:text-pink-500 transition-colors">
@@ -676,14 +882,15 @@ const Portfolio = () => {
               Skills
             </span>
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Technical */}
             <div
               className={`p-8 rounded-2xl ${
                 darkMode ? "bg-gray-800" : "bg-white"
               }`}
             >
               <h3 className="text-2xl font-bold mb-6 text-pink-500">
-                Technical
+                Mobile & Technical
               </h3>
               <div className="flex flex-wrap gap-2">
                 {portfolioData.skills.technical.map((skill, i) => (
@@ -698,13 +905,15 @@ const Portfolio = () => {
                 ))}
               </div>
             </div>
+
+            {/* Architecture & Concepts */}
             <div
               className={`p-8 rounded-2xl ${
                 darkMode ? "bg-gray-800" : "bg-white"
               }`}
             >
               <h3 className="text-2xl font-bold mb-6 text-purple-500">
-                Concepts
+                Architecture & Concepts
               </h3>
               <div className="flex flex-wrap gap-2">
                 {portfolioData.skills.concepts.map((skill, i) => (
@@ -719,16 +928,87 @@ const Portfolio = () => {
                 ))}
               </div>
             </div>
+
+            {/* DevOps & CI/CD */}
             <div
               className={`p-8 rounded-2xl ${
                 darkMode ? "bg-gray-800" : "bg-white"
               }`}
             >
               <h3 className="text-2xl font-bold mb-6 text-blue-500">
-                Soft Skills
+                DevOps & CI/CD
               </h3>
               <div className="flex flex-wrap gap-2">
-                {portfolioData.skills.soft.map((skill, i) => (
+                {portfolioData.skills.devops.map((skill, i) => (
+                  <span
+                    key={i}
+                    className={`px-4 py-2 rounded-lg ${
+                      darkMode ? "bg-gray-900" : "bg-gray-100"
+                    } hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 hover:text-white transition-all cursor-default`}
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Testing */}
+            <div
+              className={`p-8 rounded-2xl ${
+                darkMode ? "bg-gray-800" : "bg-white"
+              }`}
+            >
+              <h3 className="text-2xl font-bold mb-6 text-green-500">
+                Testing
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {portfolioData.skills.testing.map((skill, i) => (
+                  <span
+                    key={i}
+                    className={`px-4 py-2 rounded-lg ${
+                      darkMode ? "bg-gray-900" : "bg-gray-100"
+                    } hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 hover:text-white transition-all cursor-default`}
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* AI Automation */}
+            <div
+              className={`p-8 rounded-2xl ${
+                darkMode ? "bg-gray-800" : "bg-white"
+              }`}
+            >
+              <h3 className="text-2xl font-bold mb-6 text-yellow-500">
+                AI Automation
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {portfolioData.skills.aiAutomation.map((skill, i) => (
+                  <span
+                    key={i}
+                    className={`px-4 py-2 rounded-lg ${
+                      darkMode ? "bg-gray-900" : "bg-gray-100"
+                    } hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 hover:text-white transition-all cursor-default`}
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Tools & Networking */}
+            <div
+              className={`p-8 rounded-2xl ${
+                darkMode ? "bg-gray-800" : "bg-white"
+              }`}
+            >
+              <h3 className="text-2xl font-bold mb-6 text-orange-500">
+                Tools & Networking
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {portfolioData.skills.tools.map((skill, i) => (
                   <span
                     key={i}
                     className={`px-4 py-2 rounded-lg ${
@@ -799,6 +1079,16 @@ const Portfolio = () => {
             >
               <Github size={24} />
               <span>GitHub</span>
+            </a>
+            {/* WhatsApp Contact Button */}
+            <a
+              href={portfolioData.personal.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 px-8 py-4 rounded-lg border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white hover:shadow-lg hover:scale-105 transition-all"
+            >
+              <WhatsAppIcon size={24} />
+              <span>WhatsApp</span>
             </a>
           </div>
         </div>
